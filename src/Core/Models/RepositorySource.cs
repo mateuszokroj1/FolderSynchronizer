@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text.RegularExpressions;
-
-using FolderSynchronizer.Models;
 
 namespace FolderSynchronizer
 {
@@ -13,6 +10,8 @@ namespace FolderSynchronizer
         public string Value { get; set; }
 
         public SourceType Type { get; set; }
+
+        public bool CanSendChanges { get; set; }
 
         public static RepositorySource Parse(string value) =>
             !TryParse(value, out var result)
